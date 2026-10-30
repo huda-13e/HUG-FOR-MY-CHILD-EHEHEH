@@ -1,0 +1,131 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Hug For You 💗</title>
+
+<style>
+    body {
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(135deg, #ffd6e7, #e6ccff);
+        font-family: 'Comic Sans MS', cursive;
+        overflow: hidden;
+    }
+
+    .card {
+        background: white;
+        padding: 35px;
+        border-radius: 30px;
+        text-align: center;
+        width: 300px;
+        box-shadow: 0 10px 30px #d88bab;
+    }
+
+    h1 {
+        color: #ff69a6;
+    }
+
+    .teddy {
+        font-size: 90px;
+        animation: hug 1.5s infinite;
+    }
+
+    @keyframes hug {
+        0%, 100% { transform: scale(1); }
+        50% { transform: scale(1.15); }
+    }
+
+    p {
+        color: #9b6b89;
+        font-size: 17px;
+    }
+
+    button {
+        background: #ff75aa;
+        color: white;
+        border: none;
+        padding: 14px 25px;
+        border-radius: 30px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    button:hover {
+        background: #ff4290;
+        transform: scale(1.1);
+    }
+
+    #message {
+        color: #ff4f91;
+        font-size: 18px;
+        margin-top: 20px;
+    }
+
+    .heart {
+        position: absolute;
+        bottom: -30px;
+        animation: float 5s linear infinite;
+        font-size: 25px;
+    }
+
+    @keyframes float {
+        to {
+            transform: translateY(-110vh) rotate(360deg);
+            opacity: 0;
+        }
+    }
+</style>
+</head>
+
+<body>
+
+<div class="card">
+    <h1>salutations my love</h1>
+
+    <div class="teddy">🧸</div>
+
+    <h2>ye apke liye</h2>
+
+    <p>
+        my paaru baby
+        even tho im not right next to u for jhapee
+        i send digital jhapee 
+        i love u so so so so much
+    </p>
+
+    <button onclick="sendHug()">
+        daba me
+    </button>
+
+    <div id="message"></div>
+</div>
+
+<script>
+    function sendHug() {
+        document.getElementById("message").innerHTML =
+        "MWAH EHEHEHHEE I LOVE U SM OMG LIKE";
+
+        for (let i = 0; i < 15; i++) {
+            let heart = document.createElement("div");
+            heart.className = "heart";
+            heart.innerHTML = "💖";
+            heart.style.left = Math.random() * 100 + "vw";
+            heart.style.animationDuration =
+                (3 + Math.random() * 3) + "s";
+
+            document.body.appendChild(heart);
+
+            setTimeout(() => heart.remove(), 6000);
+        }
+    }
+</script>
+
+</body>
+</html>
